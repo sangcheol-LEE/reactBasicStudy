@@ -68,7 +68,7 @@ const name = "react";
 
 return (
 
-<h1>{name}</h1>
+<tag>{name}</tag>
 )
 }
 
