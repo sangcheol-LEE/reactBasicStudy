@@ -1,17 +1,14 @@
-import React from "react";
+import React, { Children } from "react";
 import Counter from "./Counter";
+import EventPractice from "./EventPractice";
 import MyComponent from "./MyComponent";
+import Parents from "./Parents";
 import Say from "./Say";
 
 function App() {
   return (
     <>
-    <MyComponent>리액트</MyComponent>
-    <Counter/>
-    <br />
-    <br />
-    <br />
-    <Say/>
+    <EventPractice />
     </>
   );
 }
