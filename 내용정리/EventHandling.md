@@ -39,3 +39,13 @@
 3. 임의 메서드 만들기
 4. input 여러 개 다루기
 5. onKeyPress 이벤트 핸들링하기.
+
+## input 여러 개 다루기
+
+- event 객체를 다루고, e.target.name 값을 사용합니다.
+- handleChange = e => { this.setState({
+  [e.target.name] : e.target.value
+  })} 다음 코드가 핵심
+- 객체 안에서 key를 []로 감싸면 그 안에 넣은 레퍼런스가 가리키는 실제 값이 key 값으로 사용됩니다.
+
+# onKeyPress 이벤트 핸들링
