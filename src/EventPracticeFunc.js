@@ -30,6 +30,7 @@ const EventPracticeFunc = () => {
     if(e.key === "Enter") {
       onClick()
     }
+    
   }
 
 
