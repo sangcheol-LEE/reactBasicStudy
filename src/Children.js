@@ -36,7 +36,7 @@ const Children = () => {
 
   return (
     <>
-    <h1>Login Practice</h1>
+    <h1>인풋관리</h1>
 
       <input 
         type="text"
