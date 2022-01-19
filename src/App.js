@@ -4,12 +4,12 @@ import EventPractice from "./EventPractice";
 import EventPracticeFunc from "./EventPracticeFunc";
 import MyComponent from "./MyComponent";
 import Say from "./Say";
-import Children from "./Children";
+import LoginPractice from "./LoginPractice";
 
 function App() {
   return (
     <>
-    <Children />
+    <LoginPractice />
     </>
   );
 }
