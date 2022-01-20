@@ -34,7 +34,7 @@ const LoginPractice = () => {
 
   return (
     <Form>
-    <h1>현미스타그램</h1>
+    <h1>IanStagram</h1>
     <LoginForm>
       <InputForm 
         type="text"
