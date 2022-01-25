@@ -1,5 +1,5 @@
 import React,{Component} from "react";
-import IterationSample from "./IterationSample";
+// import IterationSample from "./IterationSample";
 import Practice from "./Practice";
 
 

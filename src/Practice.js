@@ -14,7 +14,10 @@ const Practice = () => {
     
     const [idNum, setIdNum] = useState(5);
 
-    const text = texts.map(info => <li key={info.id}>{info.text}</li>)
+    const text = texts.map(info => 
+        <li key={info.id} onDoubleClick={() => onRemove(info.id)}>
+            {info.text}<button onClick={() => handleRemove(info.id)}>delete</button>
+        </li>)
 
     const onChange = (e) => {
         setComment(e.target.value)
@@ -29,6 +32,17 @@ const Practice = () => {
         setComment('')
     }
 
+    const onRemove = id => {
+        const nextText = texts.filter(text => text.id !== id);
+        setTexts(nextText);
+    }
+
+    const handleRemove = id => {
+        const nextText = texts.filter(name => name.id !== id);
+        setTexts(nextText)
+    }
+
+
     return (
         <>
             <input 
@@ -38,6 +52,7 @@ const Practice = () => {
             <button
                 onClick={onClick}
             >add</button>
+
             <ul>{text}</ul>
         </>
     )
