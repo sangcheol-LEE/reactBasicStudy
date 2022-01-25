@@ -1,12 +1,18 @@
-import React from "react";
-import ValidationFunc from "./ValidationFunc";
+import React,{Component} from "react";
+import ScrollBox from "./ScrollBox";
 
-function App() {
+
+class App extends Component {
+  render() {
   return (
     <>
-    <ValidationFunc />
+      <ScrollBox ref={(ref) => this.scrollBox=ref} />
+      <button
+        onClick={() => this.scrollBox.scrollToBottom()}
+      >제일 밑으로</button>
     </>
   );
+ }
 }
 
 export default App;
