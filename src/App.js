@@ -1,10 +1,10 @@
 import React from "react";
-import Validation from "./Validation";
+import ValidationFunc from "./ValidationFunc";
 
 function App() {
   return (
     <>
-    <Validation />
+    <ValidationFunc />
     </>
   );
 }
