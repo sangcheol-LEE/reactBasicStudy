@@ -26,7 +26,7 @@ const Counter = () => {
 
     return (
        <>
-            <h1>계산기: {state.value}</h1>
+            <h1>조금 신기한 계산기: {state.value}</h1>
             <button onClick={() => dispatch({type:'PLUS'})}>+</button>
             <button onClick={() => dispatch({type:'MINUS'})}>-</button>
             <button onClick={() => dispatch({type:'DOUBLE'})}>*</button>
