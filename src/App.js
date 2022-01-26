@@ -1,18 +1,25 @@
-import React,{Component} from "react";
-import Lifecycle from "./Lifecycle";
-// import Practice from "./Practice";
+import React,{Component, useEffect, useState} from "react";
+import Counter from "./Counter";
+import Info from "./Info";
 
 
-class App extends Component {
-  render() {
+const App = () => {
+
+  const [visible, setVisible] = useState(false)
+
+  
+  
   return (
     <>
-    <Lifecycle />
-    {/* <Practice /> */}
-  </>
- 
+    <button
+      onClick={() => setVisible(!visible)}
+    >{visible ? "숨기기" : "보이기"}</button>
+    {visible && <Info/>}
+
+    <Counter />
+    </>
   );
+
  }
-}
 
 export default App;

@@ -1,48 +1,41 @@
-import React, { Component } from 'react';
+import React,{useState, useReducer} from "react";
 
-class Counter extends Component {
-  constructor(props) {
-    super(props);
-    // state의 초기값 설정하기
-    this.state = {
-      number : 0,
-    };
-  }
-
-  
-
-  render() {
-    const {number} = this.state;
-    const handleOnPlus = () => {
-      this.setState({number: number + 1 }
-        )
+function all (state, action) {
+    switch(action.type) {
+        case "PLUS" :
+            return {value : state.value + 1}
+        case "MINUS" :
+            return {value : state.value - 1}
+        case "DOUBLE" :
+            return {value: state.value * state.value}
+        case "DIVIDE" :
+            return {value: state.value / state.value}
+        case "RESET" :
+            return {value: 0}
+        case "default":
+            return state;
     }
-    const handleOnMinus = () => {
-      this.setState({number: number - 1})
-    }
-    const handleOnReset = () => {
-      this.setState({number: 0}, ()=> {
-        alert('숫자가 리셋 되었습니다.')
-      })
-    }
+}
 
-    return(
-      <>
-        <h1>{number}</h1>
-        <button onClick={handleOnPlus}>
-          +1
-        </button>
-        <button onClick={handleOnMinus}>
-          -1
-        </button>
-        <button onClick={handleOnReset}>
-          reset
-        </button>
-      </>
 
-    );
 
-  }
+
+const Counter = () => {
+
+    const [state,dispatch] = useReducer(all, {value : 0})
+
+    return (
+       <>
+            <h1>계산기: {state.value}</h1>
+            <button onClick={() => dispatch({type:'PLUS'})}>+</button>
+            <button onClick={() => dispatch({type:'MINUS'})}>-</button>
+            <button onClick={() => dispatch({type:'DOUBLE'})}>*</button>
+            <button onClick={() => dispatch({type:'DIVIDE'})}>/</button>
+            <button onClick={() => dispatch({type:'RESET'})}>RESET</button>
+
+       </>
+    )
+ 
 }
 
 export default Counter
