@@ -42,12 +42,23 @@ const Practice = () => {
         setTexts(nextText)
     }
 
+    const onKeyPress = (e) => {
+        const nextComment = texts.concat({
+            id: idNum, text: comment
+        })
+         if(e.key === "Enter") {
+            setTexts(nextComment);
+         }
+        setIdNum(idNum + 1);
+        setComment('')
+    }
 
     return (
         <>
             <input 
                 value={comment}
                 onChange={onChange}
+                onKeyPress={onKeyPress}
             />
             <button
                 onClick={onClick}

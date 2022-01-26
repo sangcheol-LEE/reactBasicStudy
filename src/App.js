@@ -1,14 +1,14 @@
 import React,{Component} from "react";
-// import IterationSample from "./IterationSample";
-import Practice from "./Practice";
+import Lifecycle from "./Lifecycle";
+// import Practice from "./Practice";
 
 
 class App extends Component {
   render() {
   return (
     <>
-    {/* <IterationSample /> */}
-    <Practice />
+    <Lifecycle />
+    {/* <Practice /> */}
   </>
  
   );
