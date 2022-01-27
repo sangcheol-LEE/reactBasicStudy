@@ -1,39 +1,28 @@
-import React,{useState, useReducer} from "react";
+import React,{useReducer} from "react";
 
-function all (state, action) {
-    switch(action.type) {
-        case "PLUS" :
-            return {value : state.value + 1}
-        case "MINUS" :
-            return {value : state.value - 1}
-        case "DOUBLE" :
-            return {value: state.value * state.value}
-        case "DIVIDE" :
-            return {value: state.value / state.value}
-        case "RESET" :
-            return {value: 0}
-        case "default":
-            return state;
+function reducer (state, action) {
+    return {
+        ...state,
+        [action.name] : action.value
     }
 }
 
-
-
-
 const Counter = () => {
 
-    const [state,dispatch] = useReducer(all, {value : 0})
-
+    const [state,dispatch] = useReducer(reducer, {
+        name:'',
+        nickname:''
+    })
+    const {name, nickname} = state;
+    const onChange = e =>{dispatch(e.target)}
     return (
-       <>
-            <h1>조금 신기한 계산기: {state.value}</h1>
-            <button onClick={() => dispatch({type:'PLUS'})}>+</button>
-            <button onClick={() => dispatch({type:'MINUS'})}>-</button>
-            <button onClick={() => dispatch({type:'DOUBLE'})}>*</button>
-            <button onClick={() => dispatch({type:'DIVIDE'})}>/</button>
-            <button onClick={() => dispatch({type:'RESET'})}>RESET</button>
+    <>
+        <input name="name" value={name} onChange={onChange} />
+        <input name="nickname" value={nickname} onChange={onChange} />
+        <h1>name : {name}</h1>
+        <h1>nickname : {nickname}</h1>
 
-       </>
+    </>
     )
  
 }
