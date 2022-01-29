@@ -1,27 +1,27 @@
-import React,{useReducer} from "react";
+import React,{ useReducer } from "react";
 
-function reducer (state, action) {
-    return {
-        ...state,
-        [action.name] : action.value
+
+function reducer(state,action) {
+    switch(action.type) {
+        case 'UP' :
+            return {value : state.value + 1}
+        case "DOWN" :
+            return {value : state.value - 1}
+        default :
+            return state
     }
+
 }
 
 const Counter = () => {
+    const [state, dispatch] = useReducer(reducer, {value : 0})
 
-    const [state,dispatch] = useReducer(reducer, {
-        name:'',
-        nickname:''
-    })
-    const {name, nickname} = state;
-    const onChange = e =>{dispatch(e.target)}
+   
     return (
     <>
-        <input name="name" value={name} onChange={onChange} />
-        <input name="nickname" value={nickname} onChange={onChange} />
-        <h1>name : {name}</h1>
-        <h1>nickname : {nickname}</h1>
-
+        <h1>현미의 방구 횟수 : {state.value}번</h1>
+        <button onClick={() => dispatch({type : 'UP'})}>UP</button>
+        <button onClick={() => dispatch({type : 'DOWN'})}>Down</button>
     </>
     )
  

@@ -1,5 +1,6 @@
 import React from "react";
 import Average from "./Average";
+import Counter from "./Counter";
 
 
 const App = () => {
@@ -9,7 +10,7 @@ const App = () => {
   
   return (
     <>
-    <Average />
+    <Counter />
     </>
   );
 
