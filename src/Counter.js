@@ -1,30 +1,32 @@
 import React,{ useReducer } from "react";
 
-
-function reducer(state,action) {
+function reducer (state, action) {
     switch(action.type) {
-        case 'UP' :
-            return {value : state.value + 1}
-        case "DOWN" :
-            return {value : state.value - 1}
+        case "UP" :
+            return {kk: state.kk + 1}
+        case "DOWN" : 
+            return {kk: state.kk - 1}
         default :
-            return state
+            return  state.value
     }
-
 }
 
-const Counter = () => {
-    const [state, dispatch] = useReducer(reducer, {value : 0})
 
-   
+const Counter = () => {
+    
+    const defaultValue = {kk : 0}
+    const [state, dispatch] = useReducer(reducer,defaultValue)
+
     return (
     <>
-        <h1>현미의 방구 횟수 : {state.value}번</h1>
-        <button onClick={() => dispatch({type : 'UP'})}>UP</button>
-        <button onClick={() => dispatch({type : 'DOWN'})}>Down</button>
+    <h1>counter : {state.kk}</h1>
+    <button onClick={() => dispatch({type:"UP"})}>up</button>
+    <button onClick={() => dispatch({type:"DOWN"})}>down</button>
     </>
     )
  
 }
+
+
 
 export default Counter
