@@ -8,8 +8,7 @@ const App = () => {
 
   return (
     <>
-    <Counter/>
-    <br/>
+    
     <InfoReducer />
     <br/>
     <Average />
