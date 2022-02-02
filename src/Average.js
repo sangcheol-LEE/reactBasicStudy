@@ -30,8 +30,8 @@ const Average = () => {
           <input value={number} onChange={onChange}/>
           <button onClick={onInsert}>add</button>
           <ul>
-              {list.map((value, idx) => (
-                  <li key={idx}>{value}</li>
+              {list.map((value, num) => (
+                  <li key={num}>{value}</li>
               ))}
           </ul>
           <h1>average value : {avg}</h1>
