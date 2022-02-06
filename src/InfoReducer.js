@@ -17,7 +17,7 @@ const InfoReducer = () => {
 
    const {name,nickname} = state;
 
-   const onChange = e => {
+   const onChange = (e) => {
      dispatch(e.target)
    }
 
